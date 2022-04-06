@@ -8,16 +8,25 @@
 import UIKit
 
 class BookTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var yearReleasedLabel: UILabel!
+    
+    
+    var book: Book?{
+        didSet{
+            titleLabel.text = book?.title
+            authorLabel.text = book?.author
+       
+            if book!.yearReleased >= 2000{
+                yearReleasedLabel.text = "21st century \(book!.yearReleased)"
+            }else{
+                yearReleasedLabel.text = "90's baby \(book!.yearReleased)"
+            }
+        }
+       
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class BookController{
     
-    var books: [Book]{
+   static var books: [Book]{
         let harryPotter = Book(title: "harry potter", author: "JK Rowling", yearReleased: 1994)
         let starWars = Book(title: "star wars", author: "George Lucas", yearReleased: 2000)
         let theLorax = Book(title: "Lorax", author: "Dr.Seuss", yearReleased: 1990)
