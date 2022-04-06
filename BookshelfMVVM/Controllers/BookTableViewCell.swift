@@ -14,16 +14,13 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var yearReleasedLabel: UILabel!
     
     
-    var book: Book?{
+    var book: BookViewModel!{
         didSet{
-            titleLabel.text = book?.title
-            authorLabel.text = book?.author
-       
-            if book!.yearReleased >= 2000{
-                yearReleasedLabel.text = "21st century \(book!.yearReleased)"
-            }else{
-                yearReleasedLabel.text = "90's baby \(book!.yearReleased)"
-            }
+            print("book in cell is", book.title)
+            titleLabel.text = book.title
+            authorLabel.text = book.author
+            yearReleasedLabel.text = book.yearReleased
+            
         }
        
     }
